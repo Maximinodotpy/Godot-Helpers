@@ -1,0 +1,30 @@
+{
+	"First Section": [
+		{
+
+		},
+		{
+			"name": "Booleans",
+			"description": "Hello this is the description",
+			"type": "bool",
+			"default": true,
+		},
+		{
+			"name": "Text",
+			"description": "Hello this is the description",
+			"type": "text",
+			"default": "This is the Default Text"
+		},
+		{
+			"name": "Select",
+			"description": "Hello this is the description",
+			"type": "select",
+			"options": [
+				"Always",
+				"Sometime",
+				"Never",
+			],
+			"default": "Always"
+		}
+	]
+}
