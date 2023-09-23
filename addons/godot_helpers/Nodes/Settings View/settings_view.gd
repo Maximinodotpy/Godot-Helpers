@@ -3,6 +3,8 @@ extends Control
 @export() var configFilePath: String
 @export_file('*.json') var schemaPath = "res://addons/godot_helpers/Nodes/Settings View/example.json"
 
+## Whether Properties that have their Default Value should be removed
+@export var shouldFlush: bool = false
 
 const SCHEMA_TYPES = [
 	'select',
@@ -36,7 +38,11 @@ func renderUI():
 	configFile.load(configFilePath)
 
 	# Load the Schema
-	var schema = Helpers.getFileAsJson(schemaPath)
+	schema = Helpers.getFileAsJson(schemaPath)
+
+	# Flush
+	if shouldFlush:
+		flush()
 
 	# Clearing all Children
 	for child in get_children():
@@ -53,7 +59,7 @@ func renderUI():
 
 		for row in schema[section]:
 
-			if not Helpers.objectHasTheseKeys(row, REQUIRED_KEYS):
+			if not _isRowValid(row):
 				continue
 
 			var rowVHox = HBoxContainer.new()
@@ -121,3 +127,33 @@ func registerChanges(node: Node, section: String, key: String, row):
 	configFile.set_value(section, key, value)
 	configFile.save(configFilePath)
 
+	if shouldFlush:
+		flush()
+
+func flush():
+	print('Flushing')
+
+	for section in schema:
+		print(section)
+
+		for row in schema[section]:
+
+			if not _isRowValid(row):
+				continue
+
+			var defaultValue = row['default']
+			var actualValue = configFile.get_value(section, row['name'], row['default'])
+
+			if var_to_str(defaultValue) == var_to_str(actualValue):
+				if configFile.has_section_key(section, row['name']):
+					configFile.erase_section_key(section, row['name'])
+
+	configFile.save(configFilePath)
+
+
+## Determines wether this Row meets the Requirements
+func _isRowValid(row):
+	if not Helpers.objectHasTheseKeys(row, REQUIRED_KEYS):
+		return false
+
+	return true

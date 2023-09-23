@@ -1,6 +1,7 @@
 @tool
 extends EditorPlugin
 
+
 const SINGLETONS = {
 	'EventBus': 'EventBus.gd',
 	'Helpers': 'Helpers.gd',
@@ -17,7 +18,13 @@ const CUSTOM_TYPES = [
 		'Settings View',
 		'VBoxContainer',
 		preload("res://addons/godot_helpers/Nodes/Settings View/settings_view.gd"),
-		preload("res://icon.svg")
+		preload("res://addons/godot_helpers/Nodes/Settings View/settings view icon.svg")
+	],
+	[
+		'Panzoom Camera',
+		'Camera2D',
+		preload("res://addons/godot_helpers/Nodes/Panzoom Camera/panzoom_camera.gd"),
+		preload("res://addons/godot_helpers/Nodes/Panzoom Camera/panzoom camera icon.svg")
 	],
 ]
 

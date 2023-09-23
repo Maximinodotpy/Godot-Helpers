@@ -25,7 +25,7 @@
 			"name": "Color",
 			"description": "Hello this is the description",
 			"type": "color",
-			"default": "This is the Default Text"
+			"default": ""
 		},
 		{
 			"name": "Select",
