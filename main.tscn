@@ -22,8 +22,10 @@ color = Color(0.231373, 0.231373, 0.231373, 1)
 
 [node name="Scene Switcher Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 341.0
+offset_top = 203.0
+offset_right = 484.0
+offset_bottom = 234.0
 text = "gasdfasdfasdfasd"
 script = ExtResource("1_a8i1h")
 scene = "res://main.tscn"
