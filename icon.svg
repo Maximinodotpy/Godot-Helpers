@@ -1,1 +1,28 @@
-<svg height="128" width="128" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="124" height="124" rx="14" fill="#363d52" stroke="#212532" stroke-width="4"/><g transform="scale(.101) translate(122 122)"><g fill="#fff"><path d="M105 673v33q407 354 814 0v-33z"/><path fill="#478cbf" d="m105 673 152 14q12 1 15 14l4 67 132 10 8-61q2-11 15-15h162q13 4 15 15l8 61 132-10 4-67q3-13 15-14l152-14V427q30-39 56-81-35-59-83-108-43 20-82 47-40-37-88-64 7-51 8-102-59-28-123-42-26 43-46 89-49-7-98 0-20-46-46-89-64 14-123 42 1 51 8 102-48 27-88 64-39-27-82-47-48 49-83 108 26 42 56 81zm0 33v39c0 276 813 276 813 0v-39l-134 12-5 69q-2 10-14 13l-162 11q-12 0-16-11l-10-65H447l-10 65q-4 11-16 11l-162-11q-12-3-14-13l-5-69z"/><path d="M483 600c3 34 55 34 58 0v-86c-3-34-55-34-58 0z"/><circle cx="725" cy="526" r="90"/><circle cx="299" cy="526" r="90"/></g><g fill="#414042"><circle cx="307" cy="532" r="60"/><circle cx="717" cy="532" r="60"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 128 128" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#899BD1;}
+	.st1{fill:#7888B8;}
+	.st2{fill:#9DB1F0;}
+	.st3{opacity:0.75;}
+	.st4{fill:#9BA5C4;}
+	.st5{font-family:'SegoeUIBlack';}
+	.st6{font-size:28.4377px;}
+	.st7{fill:#D6E0FF;}
+</style>
+<g>
+	<rect x="10.1" y="40.7" class="st0" width="82.4" height="77.2"/>
+	<polygon class="st1" points="117.9,87.3 92.5,117.9 92.5,40.7 117.9,10.1 	"/>
+	<polygon class="st2" points="117.9,10.1 35.5,10.1 10.1,40.7 92.5,40.7 	"/>
+</g>
+<g>
+	<g class="st3">
+		<text transform="matrix(1 0 0 1 21.5806 56.4565)"><tspan x="0" y="0" class="st4 st5 st6">Godot</tspan><tspan x="-10.5" y="34.1" class="st4 st5 st6">Helpers</tspan></text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 20.5806 55.4565)"><tspan x="0" y="0" class="st7 st5 st6">Godot</tspan><tspan x="-10.5" y="34.1" class="st7 st5 st6">Helpers</tspan></text>
+	</g>
+</g>
+</svg>
