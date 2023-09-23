@@ -7,12 +7,18 @@
 			"name": "Booleans",
 			"description": "Hello this is the description",
 			"type": "bool",
-			"default": true,
+			"default": true
 		},
 		{
 			"name": "Text",
 			"description": "Hello this is the description",
 			"type": "text",
+			"default": "This is the Default Text"
+		},
+		{
+			"name": "Color",
+			"description": "Hello this is the description",
+			"type": "color",
 			"default": "This is the Default Text"
 		},
 		{
@@ -22,7 +28,7 @@
 			"options": [
 				"Always",
 				"Sometime",
-				"Never",
+				"Never"
 			],
 			"default": "Always"
 		}

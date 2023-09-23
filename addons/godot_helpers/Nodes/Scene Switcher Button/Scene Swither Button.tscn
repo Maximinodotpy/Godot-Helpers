@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcdae13hoit18"]
+
+[ext_resource type="Script" path="res://Scenes/Userinterfaces/Scene Swither Button.gd" id="1_j6j5q"]
+
+[node name="Scene Swither Button" type="Button"]
+process_mode = 3
+script = ExtResource("1_j6j5q")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

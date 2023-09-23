@@ -57,3 +57,48 @@ func ensureFileExists(path: String):
 ## Will open a json file and return its parsed contents
 func getFileAsJson(path: String) -> Dictionary:
 	return JSON.parse_string(FileAccess.open(path, FileAccess.READ).get_as_text())
+
+## Will connect a given function to the correct Change Event of the Control Node
+func connectChangeEvent(node: Control, callable: Callable):
+	var eventName = 'focus_exited'
+
+	if node is ColorPickerButton:
+		eventName = 'color_changed'
+	elif node is CheckBox:
+		eventName = 'pressed'
+	elif node is LineEdit:
+		eventName = 'text_changed'
+	elif node is OptionButton:
+		eventName = 'item_selected'
+
+	node.connect(eventName, callable)
+
+## Returns the value of whatever Control event was given
+func getControlValue(node) -> Variant:
+	var propertyName = getControlValuePropertyMapping(node.get_class())
+
+	return node[propertyName]
+
+## Set the control value to the given value if they are of the same type
+func setControlValue(node: Node, value):
+	var propertyName = getControlValuePropertyMapping(node.get_class())
+
+	if typeof(node[propertyName]) == typeof(value):
+		node[propertyName] = value
+
+## Returns
+func getControlValuePropertyMappings():
+	return {
+		'CheckBox': 'button_pressed',
+		'LineEdit': 'text',
+		'ColorPickerButton': 'color',
+		'OptionButton': 'selected'
+	}
+
+func getControlValuePropertyMapping(key: String):
+	var mappings = getControlValuePropertyMappings()
+
+	if not key in mappings.keys():
+		return 'text'
+	else:
+		return mappings[key]
