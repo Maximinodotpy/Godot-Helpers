@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dohjn7iv7s2aw"]
+[gd_scene load_steps=3 format=3 uid="uid://dohjn7iv7s2aw"]
+
+[ext_resource type="Script" path="res://addons/godot_helpers/Nodes/Scene Switcher Button/Scene Switcher Button.gd" id="1_a8i1h"]
+[ext_resource type="Script" path="res://addons/godot_helpers/Nodes/Settings View/settings_view.gd" id="2_3j4t1"]
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -7,3 +10,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.231373, 0.231373, 0.231373, 1)
+
+[node name="Scene Switcher Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "gasdfasdfasdfasd"
+script = ExtResource("1_a8i1h")
+scene = "res://main.tscn"
+
+[node name="Settings View" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.256944
+anchor_top = 0.189815
+anchor_right = 0.722222
+anchor_bottom = 0.686728
+script = ExtResource("2_3j4t1")
+configFilePath = "user_settings.cfg"
+metadata/_edit_use_anchors_ = true

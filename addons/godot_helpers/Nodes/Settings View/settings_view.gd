@@ -1,7 +1,7 @@
 extends Control
 
 @export() var configFilePath: String
-@export_file('*.json') var schemaPath = "res://addons/godot_helpers/Settings/example.json"
+@export_file('*.json') var schemaPath = "res://addons/godot_helpers/Nodes/Settings View/example.json"
 
 
 const SCHEMA_TYPES = [
@@ -24,6 +24,9 @@ var configFile : ConfigFile
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	renderUI()
+
+func renderUI():
 	# Create all these Elements
 	configFile = ConfigFile.new()
 
@@ -34,6 +37,10 @@ func _ready():
 
 	# Load the Schema
 	var schema = Helpers.getFileAsJson(schemaPath)
+
+	# Clearing all Children
+	for child in get_children():
+		child.queue_free()
 
 	for section in schema.keys():
 		print(section)
@@ -72,6 +79,9 @@ func _ready():
 				inputElement = ColorPickerButton.new()
 				Helpers.setControlValue(inputElement, value)
 
+			elif row['type'] == 'number':
+				inputElement = SpinBox.new()
+				Helpers.setControlValue(inputElement, value)
 
 			elif row['type'] == 'select':
 				inputElement = OptionButton.new()
@@ -97,7 +107,8 @@ func _ready():
 			rowVHox.add_child(inputElement)
 			sectionVBox.add_child(rowVHox)
 
-		$"v".add_child(sectionVBox)
+		add_child(sectionVBox)
+
 
 func registerChanges(node: Node, section: String, key: String, row):
 	print('Changes by %s in %s:%s' % [node, section, key])

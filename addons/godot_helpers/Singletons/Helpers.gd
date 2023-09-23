@@ -56,6 +56,7 @@ func ensureFileExists(path: String):
 
 ## Will open a json file and return its parsed contents
 func getFileAsJson(path: String) -> Dictionary:
+	print(path, 'path')
 	return JSON.parse_string(FileAccess.open(path, FileAccess.READ).get_as_text())
 
 ## Will connect a given function to the correct Change Event of the Control Node
@@ -70,6 +71,8 @@ func connectChangeEvent(node: Control, callable: Callable):
 		eventName = 'text_changed'
 	elif node is OptionButton:
 		eventName = 'item_selected'
+	elif node is SpinBox:
+		eventName = 'value_changed'
 
 	node.connect(eventName, callable)
 
@@ -92,7 +95,8 @@ func getControlValuePropertyMappings():
 		'CheckBox': 'button_pressed',
 		'LineEdit': 'text',
 		'ColorPickerButton': 'color',
-		'OptionButton': 'selected'
+		'OptionButton': 'selected',
+		'SpinBox': 'value'
 	}
 
 func getControlValuePropertyMapping(key: String):

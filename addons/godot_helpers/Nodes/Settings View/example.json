@@ -10,6 +10,12 @@
 			"default": true
 		},
 		{
+			"name": "Numbers",
+			"description": "Hello this is the description",
+			"type": "number",
+			"default": 0
+		},
+		{
 			"name": "Text",
 			"description": "Hello this is the description",
 			"type": "text",
