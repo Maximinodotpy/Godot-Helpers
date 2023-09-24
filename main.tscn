@@ -45,3 +45,48 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panzoom Camera" type="Camera2D" parent="."]
 script = ExtResource("3_4gck6")
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="v" type="VBoxContainer" parent="ui"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ui/v"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/v/PanelContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ui/v/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "fasdfasdf"
+
+[node name="Button2" type="Button" parent="ui/v/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "fasdfasdf"
+
+[node name="Button3" type="Button" parent="ui/v/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "fasdfasdf"
+
+[node name="Button4" type="Button" parent="ui/v/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "fasdfasdf"
+
+[node name="PanelContainer2" type="PanelContainer" parent="ui/v"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/v/PanelContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/v/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Ich bin ein cooler mann"

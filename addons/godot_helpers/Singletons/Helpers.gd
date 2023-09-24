@@ -1,13 +1,25 @@
 extends Node
 
+var activeControlElement : Control
+
 ## This is a Collection of Helper Functions
 ##
 ## Some of these functions are used elsewhere in the Godot Helpers Plugin
 ## so it is crucial that this Singleton is activated
 
+func _ready():
+	var f = func f(control: Control):
+		activeControlElement = control
+
+	get_viewport().connect('gui_focus_changed', f)
+
+
+
 ## Will return the Root Node of the Scene ( Not the Singletons and not the Windows )
 func getSceneRoot() -> Node:
 	return get_tree().root.get_child(-1)
+
+
 
 func formatSeconds(time : float, use_milliseconds : bool) -> String:
 	var minutes := time / 60
@@ -106,3 +118,6 @@ func getControlValuePropertyMapping(key: String):
 		return 'text'
 	else:
 		return mappings[key]
+
+func getActiveControlElement():
+	return activeControlElement

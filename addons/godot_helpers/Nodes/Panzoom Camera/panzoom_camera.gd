@@ -7,6 +7,13 @@ extends Camera2D
 
 var isPaused = false
 
+## Pauses the Panning and Zooming of the Camera
+func pausePanzoom():
+	isPaused = true
+
+## Continues the Panning and Zooming of the Camera
+func continuePanzoom():
+	isPaused = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
